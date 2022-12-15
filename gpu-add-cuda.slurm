@@ -6,12 +6,11 @@
 #SBATCH --mem=8gb # Assign 8gb memory
 
 module load gcc
-module load cuda/10.0c
+module load cuda/10.0
 
 cp cuda_addition.cu $PFSDIR
 cd $PFSDIR
 nvcc -o cuda_addition cuda_addition.cu
-
-echo "timing gpu-add-cuda"
 time ./cuda_addition
+echo "benchmarked gpu-add-cuda"
 cp -ru * $SLURM_SUBMIT_DIR

@@ -10,7 +10,6 @@ module load gcc
 cp mpi_addition.c $PFSDIR
 cd $PFSDIR
 mpicc -o mpi_addition mpi_addition.c
-
-echo "timing parallel-add-mpi"
 time ./mpi_addition
+echo "benchmarked parallel-add-mpi"
 cp -ru * $SLURM_SUBMIT_DIR
