@@ -10,5 +10,7 @@ module load gcc
 cp omp_addition.c $PFSDIR
 cd $PFSDIR
 gcc -o omp_addition -fopenmp omp_addition.c
+
+echo "timing parallel-add-omp"
 time ./omp_addition
 cp -ru * $SLURM_SUBMIT_DIR

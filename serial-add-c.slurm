@@ -10,6 +10,8 @@ module load gcc
 cp addition.c $PFSDIR
 cd $PFSDIR
 gcc -o serial-add-c addition.c
+
+echo "timing serial-add-c"
 time ./serial-add-c
 
 cp -ru * $SLURM_SUBMIT_DIR

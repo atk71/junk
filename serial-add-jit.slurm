@@ -9,5 +9,7 @@ module load python
 
 cp jit_addition.py $PFSDIR
 cd $PFSDIR
+
+echo "timing serial-add-jit"
 time python jit_addition.py
 cp -ru * $SLURM_SUBMIT_DIR

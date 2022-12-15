@@ -11,5 +11,7 @@ module load cuda/10.0c
 cp cuda_addition.cu $PFSDIR
 cd $PFSDIR
 nvcc -o cuda_addition cuda_addition.cu
+
+echo "timing gpu-add-cuda"
 time ./cuda_addition
 cp -ru * $SLURM_SUBMIT_DIR
